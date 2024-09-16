@@ -23,8 +23,8 @@ export default function ContactForm() {
   const numberId = nanoid();
 
   const handleSubmit = (values, actions) => {
-    values.id = nanoid();
-    dispatch(addContact(values));
+    const newContact = { ...values, id: nanoid() };
+    dispatch(addContact(newContact));
     actions.resetForm();
   };
 
